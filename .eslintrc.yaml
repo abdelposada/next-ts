@@ -1,0 +1,33 @@
+root: true
+env:
+  node: true
+  es2020: true
+  browser: true
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+  project: "./tsconfig.json"
+ignorePatterns:
+  - node_modules/*
+  - ".next/*"
+  - ".out/*"
+  - "!.prettierrc.js"
+plugins:
+  - "@typescript-eslint"
+extends:
+  - next/core-web-vitals
+  - prettier
+  - airbnb-typescript/base
+settings:
+  import/resolver:
+    node:
+      extensions:
+        - ".js"
+        - ".jsx"
+        - ".ts"
+        - ".tsx"
+      paths:
+        - src
